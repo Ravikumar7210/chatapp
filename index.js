@@ -12,7 +12,7 @@ app.use(express.static('public'));
 var io = socket(server);
 
 io.on('connection', (socket) => {
-  console.log("Hey got connected with socket.io", socket.id);
+  console.log(`Hey the system has got connected with socket.io and the socket.io id is ${socket.id}`);
 
   socket.on('chat', (data) => {
     io.sockets.emit('chat', data);
